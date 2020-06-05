@@ -1,9 +1,24 @@
 require 'simplecov'
-Simplecov.start
+SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/date'
 require 'pry'
+
+class DateTimeTest < Minitest::Test
+
+  def test_it_exists
+    date = DateTime.now
+    assert_instance_of DateTime, date
+  end
+
+  def test_it_strips_off_time
+    date = DateTime.now
+    date.strftime("%m/%d/%y")
+    assert_equal #not sure what to put here 
+  end
+
+end
 
 
 
