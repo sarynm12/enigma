@@ -12,10 +12,15 @@ class Key
     else
       key
     end
-    p key.to_i
+    p key
   end
+
+  # def count
+  #   @key.count
+  # end
 
 
   key1 = Key.new
   key1.generate
+
 end
