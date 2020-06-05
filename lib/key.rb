@@ -5,21 +5,17 @@ class Key
     @numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
-  def randomize
+  def generate
     key = 5.times.map{rand(5)}.join
-    p key 
+    if key.length < 5
+      printkey("%05d",key)
+    else
+      key
+    end
+    p key.to_i
   end
 
-  r = Key.new
-  r.randomize
-  # random = Key.new
-  # p random.numbers
 
+  key1 = Key.new
+  key1.generate
 end
-
-
-# numbers.sample(5)
-#
-#
-#
-# 10.times.map{rand(10)}.join # => "3401487670"
