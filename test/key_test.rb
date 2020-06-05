@@ -8,8 +8,15 @@ require 'pry'
 class KeyTest < Minitest::Test
 
   def test_it_exists
+    key = Key.new
+    assert_instance_of Key, key
+  end
 
-  end 
+  # def test_it_generates_5_digits
+  #   key = Key.new
+  #   key.generate
+  #   assert_equal 5, key.count
+  # end
 
 end
 
