@@ -13,14 +13,14 @@ class Key
     p @numbers
   end
 
-  key1 = Key.new
+
 
 
   def split #A key
-    key.numbers.split('').map do |number|
+    num_array = @numbers.split('').map do |number|
       number.to_i
-    end 
-      binding.pry
+    end
+      num_array[0..1].join.to_i
   end
 
 
