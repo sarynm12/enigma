@@ -1,3 +1,5 @@
+require 'pry'
+
 class Key
   attr_reader :numbers
 
@@ -11,22 +13,24 @@ class Key
     p @numbers
   end
 
-  def split
-
-  end
-
-
   key1 = Key.new
 
 
-end
+  def split #A key
+    key.numbers.split('').map do |number|
+      number.to_i
+    end 
+      binding.pry
+  end
 
-# def generate
-#   key = 5.times.map{rand(5)}.join
-#   if key.length < 5
-#     printkey("%05d",key)
-#   else
-#     key
-#   end
-#    key
-# end
+
+
+  #def B key
+  #def c key
+  #def d key
+
+
+
+
+
+end

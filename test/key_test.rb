@@ -12,11 +12,11 @@ class KeyTest < Minitest::Test
     assert_instance_of Key, key
   end
 
-  # def test_it_generates_5_digits
-  #   key = Key.new
-  #   key.generate
-  #   assert_equal 5, key.count
-  # end
+  def test_it_can_split
+    key = Key.new
+    key.numbers 
+    binding.pry
+  end
 
 end
 
