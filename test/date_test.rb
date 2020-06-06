@@ -13,9 +13,10 @@ class DateTimeTest < Minitest::Test
   end
 
   def test_it_strips_off_time
-    date = DateTime.now
-    date.strftime("%m/%d/%y")
-    assert_equal #not sure what to put here 
+    full_date = DateTime.now
+    date = full_date.strftime("%m/%d/%y").delete!("/")
+    binding.pry
+    assert_equal #not sure what to put here
   end
 
 end

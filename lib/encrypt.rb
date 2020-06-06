@@ -1,9 +1,14 @@
+require './lib/key'
+require './lib/date'
+
 class Encrypt
   attr_reader :letters
 
   def initialize
     letters = ("a".."z").to_a << " "
   end
+
+  here is where to add key and offset
 
   # e = [1, 2, 3].map
   # e.each_with_index { |n, i| n * i }
