@@ -14,38 +14,43 @@ class Key
   end
 
   def a_key
-    num_array = @numbers.split('').map do |number|
+    a = @numbers.split('').map do |number|
       number.to_i
     end
-      num_array[0..1].join.to_i
-      num_array
+      a[0..1].join.to_i
   end
 
   def b_key
-    num_array = @numbers.split('').map do |number|
+    b = @numbers.split('').map do |number|
       number.to_i
     end
-      num_array[1..2].join.to_i
-      num_array
+      b[1..2].join.to_i
   end
 
   def c_key
-    num_array = @numbers.split('').map do |number|
+    c = @numbers.split('').map do |number|
       number.to_i
     end
-      num_array[2..3].join.to_i
-      num_array
+      c[2..3].join.to_i
   end
 
   def d_key
-    num_array = @numbers.split('').map do |number|
+    d = @numbers.split('').map do |number|
       number.to_i
     end
-      num_array[3..4].join.to_i
-      num_array
+      d[3..4].join.to_i
   end
 
-key = mock
+  def all_keys
+    keys = {:a => a_key,
+            :b => b_key,
+            :c => c_key,
+            :d => d_key
+          }
+  end
+
+  key1 = Key.new
+  binding.pry
 
 
 end

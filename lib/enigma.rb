@@ -1,4 +1,11 @@
-enigma = Enigma.new
+class Enigma
 
-def encrypt
-enigma.encrypt("hello world", "02715", "040895")
+  def random_number
+    @key.numbers 
+  end
+
+  def encrypt
+    #returns hash
+  end
+
+end
