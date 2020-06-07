@@ -50,7 +50,7 @@ class Key
   end
 
   key1 = Key.new
-  binding.pry
+
 
 
 end

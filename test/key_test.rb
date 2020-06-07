@@ -14,8 +14,7 @@ class KeyTest < Minitest::Test
 
   def test_it_can_split
     key = Key.new
-    key.numbers 
-    binding.pry
+    key.numbers
   end
 
 end

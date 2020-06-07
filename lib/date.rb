@@ -1,9 +1,15 @@
 require 'date'
 require 'pry'
 
-  full_date = DateTime.now
-  date = full_date.strftime("%m/%d/%y").delete!("/")
-  p date
+    full_date = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
+    date_squared = full_date ** 2
+    date = date_squared.to_s[-4..-1]
+    binding.pry
+
+
+    #date
+
+
 
   def a_offset
     a_array = date.split('').map do |date|

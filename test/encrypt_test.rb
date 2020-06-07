@@ -10,7 +10,8 @@ require 'pry'
 class EncryptTest < Minitest::Test
 
   def test_it_exists
-    encrypt = Encrypt.new 
+    encrypt = Encrypt.new
+    binding.pry
     assert_instance_of Encrypt, encrypt
   end
 

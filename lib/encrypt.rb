@@ -1,16 +1,20 @@
 require './lib/key'
 require './lib/date'
+require 'date'
+require 'pry'
 
 class Encrypt
-  attr_reader :letters
+  attr_reader :letters, :date
 
   def initialize
-    letters = ("a".."z").to_a << " "
+    @letters = ("a".."z").to_a << " "
+    full_date = DateTime.now
+    @date = full_date.strftime("%m/%d/%y").delete!("/")
   end
 
   def find_shift
-
-  end 
+    all_keys
+  end
 
 end
 
