@@ -10,7 +10,6 @@ class Key
     else
       @numbers
     end
-    p @numbers
   end
 
   def a_key
@@ -48,10 +47,5 @@ class Key
             :d => d_key
           }
   end
-
-  key = Key.new
-
-
-
 
 end

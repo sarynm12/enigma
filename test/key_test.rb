@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'mocha/minitest'
 require './lib/key'
 require 'pry'
 
@@ -12,9 +13,9 @@ class KeyTest < Minitest::Test
     assert_instance_of Key, key
   end
 
-  def test_it_can_split
+  def test_it_returns_a_random_5_digit_number
     key = Key.new
-    key.numbers
+    assert_equal true, key.numbers.length == 5
   end
 
 end

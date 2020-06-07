@@ -48,6 +48,12 @@ class Encrypt
 
   end
 
+  def cipher(message)
+    message = "hello world".chars
+
+
+  end
+
 end
 
 
