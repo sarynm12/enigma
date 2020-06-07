@@ -42,10 +42,16 @@ class Encrypt
   end
 
   def find_shift
-    a = all_keys[:a] + a_offset
-    b = all_keys[:b] + b_offset
-    c = all_keys[:c] + c_offset
-    d = all_keys[:d] + d_offset
+    shifts = []
+    a = encrypt.keys[:a] + encrypt.offsets[:a]
+    b = encrypt.keys[:b] + encrypt.offsets[:b]
+    c = encrypt.keys[:c] + encrypt.offsets[:c]
+    d = encrypt.keys[:d] + encrypt.offsets[:d]
+    shifts << a
+    shifts << b
+    shifts << c
+    shifts << d
+    shifts
   end
 
 end
