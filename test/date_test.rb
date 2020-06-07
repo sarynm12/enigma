@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'mocha/minitest'
 require './lib/date'
 require 'pry'
 
@@ -13,9 +14,16 @@ class DateTimeTest < Minitest::Test
   end
 
   def test_it_strips_off_time
-    full_date = DateTime.now
-    date = full_date.strftime("%m/%d/%y").delete!("/")
-    assert_equal #not sure what to put here
+    # full_date = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
+    # date_squared = full_date ** 2
+    # date = date_squared.to_s[-4..-1]
+    #
+    # a = date.split('').map do |date|
+    #   date.to_i
+    # end
+    # a_offset = a[0..1].join.to_i
+
+    assert_equal 84, a_offset
   end
 
 end

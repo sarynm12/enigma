@@ -1,3 +1,7 @@
+require './lib/key'
+require './lib/date'
+require 'date'
+
 class Enigma
   #attr_reader :message, :key, :date
 
@@ -6,7 +10,7 @@ class Enigma
                 :key => "key",
                 :date => "date"
               }
-  end 
+  end
 
 end
 

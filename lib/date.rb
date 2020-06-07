@@ -1,44 +1,36 @@
 require 'date'
 require 'pry'
 
-    full_date = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
-    date_squared = full_date ** 2
-    date = date_squared.to_s[-4..-1]
-    binding.pry
+class DateTime
 
+      full_date = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
+      date_squared = full_date ** 2
+      date = date_squared.to_s[-4..-1]
 
-    #date
+      a = date.split('').map do |date|
+        date.to_i
+      end
+      a_offset = a[0..1].join.to_i
 
+      b = date.split('').map do |date|
+        date.to_i
+      end
+      b_offset = b[1..2].join.to_i
 
+      c = date.split('').map do |date|
+        date.to_i
+      end
+      c_offset = c[2..3].join.to_i
 
-  def a_offset
-    a_array = date.split('').map do |date|
-      date.to_i
-    end
-      a_array[0..1].join.to_i
-      a_array
-  end
+      d = date.split('').map do |date|
+        date.to_i
+      end
+      d_offset = d[3..4].join.to_i
 
-  def b_offset
-    b_array = date.split('').map do |date|
-      date.to_i
-    end
-      b_array[1..2].join.to_i
-      b_array
-  end
+      offsets = {:a => a_offset,
+              :b => b_offset,
+              :c => c_offset,
+              :d => d_offset
+            }
 
-  def c_offset
-    c_array = date.split('').map do |date|
-      date.to_i
-    end
-      c_array[2..3].join.to_i
-      c_array
-  end
-
-  def d_offset
-    d_array = date.split('').map do |date|
-      date.to_i
-    end
-      d_array[3..4].join.to_i
-      d_array
-  end
+end

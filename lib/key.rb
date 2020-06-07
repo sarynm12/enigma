@@ -42,14 +42,15 @@ class Key
   end
 
   def all_keys
-    keys = {:a => a_key,
+    all_keys = {:a => a_key,
             :b => b_key,
             :c => c_key,
             :d => d_key
           }
   end
 
-  key1 = Key.new
+  key = Key.new
+
 
 
 
