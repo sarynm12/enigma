@@ -4,7 +4,7 @@ require 'date'
 require 'pry'
 
 class Encrypt
-  attr_reader :letters, :offsets, :keys
+  attr_reader :letters, :offsets, :keys, :final_shifts
 
   def initialize
     @letters = ("a".."z").to_a << " "
@@ -39,19 +39,13 @@ class Encrypt
             :c => c_offset,
             :d => d_offset
           }
-  end
 
-  def find_shift
-    shifts = []
-    a = encrypt.keys[:a] + encrypt.offsets[:a]
-    b = encrypt.keys[:b] + encrypt.offsets[:b]
-    c = encrypt.keys[:c] + encrypt.offsets[:c]
-    d = encrypt.keys[:d] + encrypt.offsets[:d]
-    shifts << a
-    shifts << b
-    shifts << c
-    shifts << d
-    shifts
+    @final_shifts = {:a => keys[:a] + offsets[:a],
+              :b =>  keys[:b] + offsets[:b],
+              :c =>  keys[:c] + offsets[:c],
+              :d =>  keys[:d] + offsets[:d]
+            }
+
   end
 
 end

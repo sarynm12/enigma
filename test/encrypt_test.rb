@@ -15,4 +15,5 @@ class EncryptTest < Minitest::Test
     assert_instance_of Encrypt, encrypt
   end
 
+
 end
