@@ -4,10 +4,10 @@ require 'date'
 require 'pry'
 
 class Encrypt
-  attr_reader :letters, :offsets, :keys, :final_shifts
+  attr_reader :alphabet, :offsets, :keys, :final_shifts
 
   def initialize
-    @letters = ("a".."z").to_a << " "
+    @alphabet = ("a".."z").to_a << " "
     @keys = Key.new.all_keys
 
     full_date = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
@@ -40,17 +40,27 @@ class Encrypt
             :d => d_offset
           }
 
-    @final_shifts = {:a => keys[:a] + offsets[:a],
-              :b =>  keys[:b] + offsets[:b],
-              :c =>  keys[:c] + offsets[:c],
-              :d =>  keys[:d] + offsets[:d]
+    @final_shifts = {"A" => keys[:a] + offsets[:a],
+              "B" =>  keys[:b] + offsets[:b],
+              "C" =>  keys[:c] + offsets[:c],
+              "D" =>  keys[:d] + offsets[:d]
             }
 
+    end
+
+  def rotate(letter)
+    rotated = Hash.new
+    @alphabet.rotate(@final_shifts[letter]).each_with_index do |letter, index|
+      rotated[letter] = index
+    end
+    rotated.invert
+    end
   end
 
   def cipher(message)
-    message = "hello world".chars
-
+    encrypted_message = []
+    message.downcase.chars
+    message.each.with_index do |char, index|
 
   end
 
