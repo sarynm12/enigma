@@ -6,5 +6,12 @@ require 'pry'
   incoming_message = handle.read
   handle.close
 
-  enigma = Enigma.new
-  enimga.encrypt(incoming_message)
+  enigma = Enigma.new(incoming_message)
+  encrypted_text = enigma.encrypt
+
+  writer = File.open(ARGV[1], "w")
+  writer.write(encrypted_text[:message])
+
+  writer.close
+
+  puts "Created #{ARGV[1]} with the key #{encrypted_text[:key]} and date #{encrypted_text[:date]}"
