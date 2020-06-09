@@ -24,7 +24,7 @@ class EnigmaTest < Minitest::Test
 
   def test_it_returns_5_letter_key
     enigma = Enigma.new("hello world")
-    assert_equal 5, enigma.encrypt[:key].length 
+    assert_equal 5, enigma.encrypt[:key].length
   end
 
   def test_it_returns_date_in_correct_format
@@ -40,6 +40,11 @@ class EnigmaTest < Minitest::Test
   def test_it_returns_hash_with_correct_keys
     enigma = Enigma.new("hello world")
     assert_equal [:message, :key, :date], enigma.encrypt.keys
+  end
+
+  def test_it_returns_an_encryped_message
+    enigma = mock("hellow world")
+    enigma.stubs(:message).returns("gdkknzvnqkc")
   end
 
 end
