@@ -7,7 +7,7 @@ class Enigma
 
   def initialize(incoming_message)
     @alphabet = ("a".."z").to_a << " "
-    @keys = Key.new.all_keys
+    @keys = Key.new
     @full_date = DateTime.now.strftime("%m/%d/%y").delete!("/")
     full_date_i = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
     date_squared = full_date_i ** 2
@@ -39,10 +39,10 @@ class Enigma
             :d => d_offset
           }
 
-    @final_shifts = {"A" => keys[:a] + offsets[:a],
-              "B" =>  keys[:b] + offsets[:b],
-              "C" =>  keys[:c] + offsets[:c],
-              "D" =>  keys[:d] + offsets[:d]
+    @final_shifts = {"A" => keys.all_keys[:a] + offsets[:a],
+              "B" =>  keys.all_keys[:b] + offsets[:b],
+              "C" =>  keys.all_keys[:c] + offsets[:c],
+              "D" =>  keys.all_keys[:d] + offsets[:d]
             }
     @incoming_message = incoming_message.downcase
     @encrypted_message = []
@@ -64,7 +64,7 @@ class Enigma
 
       @encrypt = Hash.new
         @encrypt[:message] = @encrypted_message.join
-        @encrypt[:key] = @final_shifts.to_s
+        @encrypt[:key] = @keys.numbers 
         @encrypt[:date] = @full_date
       end
       @encrypt
