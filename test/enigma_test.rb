@@ -29,7 +29,7 @@ class EnigmaTest < Minitest::Test
 
   def test_it_returns_date_in_correct_format
     enigma = Enigma.new("hello world")
-    assert_equal "060820", enigma.full_date
+    assert_equal "060920", enigma.full_date
   end
 
   def test_it_returns_all_downcased_characters
