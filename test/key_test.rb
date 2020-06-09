@@ -15,17 +15,37 @@ class KeyTest < Minitest::Test
 
   def test_it_returns_a_random_5_digit_number
     key = Key.new
+    key.generate_random_number
     assert_equal true, key.numbers.length == 5
   end
 
+  def test_a_key
+    key1 = mock
+    key1.stubs(:a_key).returns(13)
+  end
+
+  def test_b_key
+    key1 = mock
+    key1.stubs(:b_key).returns(32)
+  end
+
+  def test_c_key
+    key1 = mock
+    key1.stubs(:c_key).returns(20)
+  end
+
+  def test_d_key
+    key1 = mock
+    key1.stubs(:d_key).returns(01)
+  end
+
+  def test_all_keys
+    key1 = mock
+    key1.stubs(:all_keys).returns({:a => 13,
+                                  :b => 32,
+                                  :c => 20,
+                                  :d => 01
+                                  })
+  end
+
 end
-
-
-
-
-# the keys are created by generating a random five digit number, like 02715, and splitting it up like so:
-#
-# A key: first two digits (02)
-# B key: second and third digits (27)
-# C key: third and fourth digits (71)
-# D key: fourth and fifth digits (15)

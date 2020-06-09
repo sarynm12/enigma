@@ -12,7 +12,6 @@ class ShiftTest < Minitest::Test
 
   def test_it_exists
     shift = Shift.new
-    binding.pry
     assert_instance_of Shift, shift
   end
 
@@ -22,8 +21,9 @@ class ShiftTest < Minitest::Test
     assert_equal expected, shift.alphabet
   end
 
-  def test_it_has_keys
-    shift = Shift.new
+  def test_it_returns_final_shift_values
+    shift1 = mock
+    shift1.stubs(:final_shifts).returns({"A"=>58, "B"=>80, "C"=>2, "D"=>21})
   end
 
 end

@@ -1,11 +1,19 @@
 require 'date'
 require 'pry'
 
-class DateTime
+class Offset
 
+  def full_date
+    full_date = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
+  end 
+
+  def date
     full_date = DateTime.now.strftime("%m/%d/%y").delete!("/").to_i
     date_squared = full_date ** 2
     date = date_squared.to_s[-4..-1]
+  end
+
+  def generate_offsets
     a = date.split('').map do |date|
       date.to_i
     end
@@ -30,4 +38,5 @@ class DateTime
               :c => c_offset,
               :d => d_offset
             }
+  end
 end
