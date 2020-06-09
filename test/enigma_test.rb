@@ -22,9 +22,9 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.alphabet
   end
 
-  def test_it_returns_4_keys
+  def test_it_returns_5_letter_key
     enigma = Enigma.new("hello world")
-    assert_equal 4, enigma.keys.count
+    assert_equal 5, enigma.encrypt[:key].length 
   end
 
   def test_it_returns_date_in_correct_format
@@ -38,7 +38,8 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_returns_hash_with_correct_keys
-
-  end 
+    enigma = Enigma.new("hello world")
+    assert_equal [:message, :key, :date], enigma.encrypt.keys
+  end
 
 end
