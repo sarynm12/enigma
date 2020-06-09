@@ -37,4 +37,8 @@ class EnigmaTest < Minitest::Test
     assert_equal "hello world", enigma.incoming_message
   end
 
+  def test_it_returns_hash_with_correct_keys
+
+  end 
+
 end
