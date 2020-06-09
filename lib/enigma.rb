@@ -44,7 +44,7 @@ class Enigma
               "C" =>  keys[:c] + offsets[:c],
               "D" =>  keys[:d] + offsets[:d]
             }
-    @incoming_message = incoming_message
+    @incoming_message = incoming_message.downcase
     @encrypted_message = []
       message = incoming_message.downcase.split(//)
       letter_number = 0
