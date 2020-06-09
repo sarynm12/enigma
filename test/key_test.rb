@@ -15,7 +15,6 @@ class KeyTest < Minitest::Test
 
   def test_it_returns_a_random_5_digit_number
     key = Key.new
-    key.generate_random_number
     assert_equal true, key.numbers.length == 5
   end
 
